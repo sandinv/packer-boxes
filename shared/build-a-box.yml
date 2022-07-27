@@ -2,7 +2,7 @@
 # Set a version for this new box.
 - name: Get current box version from Vagrant.
   uri:
-    url: https://app.vagrantup.com/api/v1/box/geerlingguy/{{ item }}
+    url: https://app.vagrantup.com/api/v1/box/sandinv/{{ item }}
     return_content: true
   register: box_info
 
