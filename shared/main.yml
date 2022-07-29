@@ -37,7 +37,7 @@
         name: victor
         shell: /bin/bash
         groups: sudo
-
+        password: "$6$KzswjQvz5jT7tu1d$SJlKeWJrCcsUT80itsfcSORb97bB8wkbKEDVXzogg5GRluvp2ZkmdUzoUp645vbBdMLhU8Q2ij.u.rS2O.pHd0"
     - name: Set authorized keys for victor
       authorized_key:
         user: victor
