@@ -75,13 +75,13 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "1024"
+          "2048"
         ],
         [
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "1"
+          "4"
         ]
       ]
     }
@@ -89,12 +89,12 @@
   "post-processors": [
     [
       {
-        "output": "builds/{{.Provider}}-ubuntu2004.box",
+        "output": "builds/ubuntu2004.box",
         "type": "vagrant"
       },
       {
         "type": "vagrant-cloud",
-        "box_tag": "geerlingguy/ubuntu2004",
+        "box_tag": "sandinv/ubuntu2004",
         "version": "{{user `version`}}"
       }
     ]

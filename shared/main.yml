@@ -31,3 +31,15 @@
           - vim
         state: present
       when: ansible_os_family == 'Debian'
+
+    - name: Create a user account
+      user:
+        name: victor
+        shell: /bin/bash
+        groups: sudo
+        password: "$6$KzswjQvz5jT7tu1d$SJlKeWJrCcsUT80itsfcSORb97bB8wkbKEDVXzogg5GRluvp2ZkmdUzoUp645vbBdMLhU8Q2ij.u.rS2O.pHd0"
+    - name: Set authorized keys for victor
+      authorized_key:
+        user: victor
+        state: present
+        key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD5V/1QMN4vwdr666bCDjr8xbDTcj/B/v50iazKyEQn6wtthMrGVEFcMIbV0VSCoPxXDIxzHCNe5iNQ7NoORrHctLSB3kNn4Rfi1C6BL8BhH7bSGqJvVhaBDrcchRwbajMZ57NXeJ9zsvn6RsBtks2TjWbBemoflAoggekX5ACv2URijrhREnHYE8vHSXX1zeGIE/GE6eVrDmsmqGo1yW2ZtCtciitVH49vAdgoDkI62YJlZGSA/GsV8QNVkSfPbfM7JrjLQA07r0xAfGrw7hA+xQaeuvuUFPxnNA9rS5ytKk5Kw4MU4Gt29a+AjXviVS2JP8ZHyBq8R9+7W9YUckdyoq+nCWRAo3ZjX3sHrAp7yeLikvlL/dUlI6n1v00cwWDJI0/gz8X98ouCB1YxoiPS8shgeK8x53X6/Bn7JDFPuB4RaVG9GdT03wnDbcxTUuAtVtteFYpOOxpj8T7+rBsbNHCnvJhigEImSvi9e7aaBpqFYIsGv3/LDvyfeHmzvtM= victor"
